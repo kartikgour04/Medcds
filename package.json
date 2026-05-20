@@ -1,0 +1,20 @@
+{
+  "name": "medcds",
+  "version": "1.0.0",
+  "description": "MedCDS - AI-Powered Clinical Decision Support System",
+  "scripts": {
+    "setup": "node -e \"require('child_process').execSync('bash setup.sh', {stdio:'inherit'})\"",
+    "dev": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "seed": "cd backend && npm run seed",
+    "install:all": "cd backend && npm install --legacy-peer-deps && cd ../frontend && npm install --legacy-peer-deps",
+    "build": "cd frontend && npm run build",
+    "docker:up": "docker-compose up -d --build",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

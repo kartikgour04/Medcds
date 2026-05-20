@@ -1,0 +1,5 @@
+# MedCDS - Clinical Decision Support System
+User-agent: *
+Disallow: /api/
+Disallow: /reports/
+Allow: /
