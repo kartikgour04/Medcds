@@ -4,24 +4,11 @@
 
 MedCDS helps patients compile a complete medical history (allergies, current medications, prior conditions, lab reports) and generates an AI-powered clinical report with safe drug suggestions — ready to show the doctor.
 
-## What Was Changed (Claude API Integration)
-
-The original project relied on **Infermedica** (paid), **Isabel** (paid), and **OpenAI** (paid).
-
-This version uses **ONE key only**: the **Anthropic Claude API**, which is:
-- Available for free credits at [console.anthropic.com](https://console.anthropic.com)
-- Powers disease prediction (replaces Infermedica + Isabel)
-- Powers clinical summaries (replaces OpenAI)
-- Free APIs for drug data: OpenFDA, RxNorm, DailyMed (no key needed)
-
 ## Quick Setup
 
-### Prerequisites
+### 1.Prerequisites
 - Node.js 18+
 - MongoDB (local or Atlas)
-
-### 1. Get your Anthropic API Key
-Go to [console.anthropic.com](https://console.anthropic.com) → Create API Key (free credits included)
 
 ### 2. Configure environment
 ```
@@ -58,7 +45,7 @@ Open: http://localhost:3000
 
 1. **Patient fills their history**: allergies, current medications, prior conditions
 2. **New Assessment**: enters chief complaint + symptoms
-3. **Claude AI** analyzes symptoms → differential diagnosis (up to 5 conditions)
+3. **AI** analyzes symptoms → differential diagnosis (up to 5 conditions)
 4. **Guideline Engine** (local, no API) matches diseases to evidence-based drugs
 5. **Safety Filter** (local, no API) removes drugs that conflict with patient's:
    - Allergies
@@ -66,7 +53,7 @@ Open: http://localhost:3000
    - Prior conditions (contraindications)
    - Age-specific rules
 6. **OpenFDA / RxNorm** (free, no key) enriches drug data
-7. **Claude AI** generates a professional clinical summary
+7. **AI** generates a professional clinical summary
 8. **PDF Report** generated — ready to show to doctor
 
 ## APIs Used
